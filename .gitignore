@@ -1,0 +1,4 @@
+venv/
+pycache/
+ip.log
+public_ip
