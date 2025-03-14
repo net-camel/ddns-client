@@ -69,4 +69,4 @@ if check_public_ip(public_ip):
 else:
     update_log(public_ip, False)
 
-# Need to check for status code returned from API for errors
+# Need to check for status code returned from API for errors. Note errors in ip.log
