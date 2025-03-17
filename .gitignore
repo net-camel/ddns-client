@@ -1,4 +1,4 @@
 venv/
 pycache/
-ip.log
-public_ip
+ddns.log
+temp.py
