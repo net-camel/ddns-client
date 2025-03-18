@@ -2,3 +2,4 @@ venv/
 pycache/
 ddns.log
 temp.py
+log/ddns.log

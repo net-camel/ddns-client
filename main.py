@@ -5,7 +5,7 @@ import logging
 
 # Logging config
 logging.basicConfig(
-    filename="ddns.log",
+    filename="/usr/src/app/log/ddns.log",
     level=logging.INFO,
     # level=logging.DEBUG,
     format="%(asctime)s    %(levelname)-8s    %(message)s",
