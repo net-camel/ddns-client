@@ -1,19 +1,33 @@
-from datetime import datetime
 import os
 import requests
 import logging
+import argparse
 
-# Logging config
-logging.basicConfig(
-    filename="/usr/src/app/log/ddns.log",
+parser = argparse.ArgumentParser(
+    prog="DDNS Client"
+)
+parser.add_argument('-d', '--directory', help="Path to create log file within")
+args = parser.parse_args()
+
+if args.directory:
+    logging.basicConfig(
+    filename=f"{args.directory}/ddns.log",
     level=logging.INFO,
     # level=logging.DEBUG,
     format="%(asctime)s    %(levelname)-8s    %(message)s",
     datefmt="%m-%d-%Y %H:%M:%S"
 )
+else:
+    logging.basicConfig(
+        filename="/usr/src/app/log/ddns.log",
+        level=logging.INFO,
+        # level=logging.DEBUG,
+        format="%(asctime)s    %(levelname)-8s    %(message)s",
+        datefmt="%m-%d-%Y %H:%M:%S"
+    )
+
 logger = logging.getLogger("ddns_client")
 
-# Constants
 IP_CHECK_ENDPOINT = "https://ipv4.icanhazip.com"
 DNS_CHECK_ENDPOINT = "https://api.porkbun.com/api/json/v3/dns/retrieveByNameType"
 DNS_EDIT_ENDPOINT = "https://api.porkbun.com/api/json/v3/dns/editByNameType"
