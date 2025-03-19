@@ -15,7 +15,7 @@ RUN chmod +x ./main.py
 ENV APIKEY=""
 ENV SECRET_APIKEY=""
 
-RUN (crontab -l 2>/dev/null; echo "* * * * * python3 /usr/src/app/main.py") | crontab -
+RUN (crontab -l 2>/dev/null; echo "30 * * * * python3 /usr/src/app/main.py") | crontab -
 
 VOLUME ["/usr/src/app/log"]
 

@@ -43,7 +43,7 @@ class DDNSClient:
         self.record_type = record_type
 
         if not self.api_key or not self.secret_api_key:
-            logger.error("API keys not in environment, exiting script")
+            logger.error("API keys not in environment")
             raise ValueError("API keys not found in environment variables")
         else:
             logger.debug(f"API keys found in environment\nAPIKEY: {self.api_key}\nSECRETAPIKEY: {self.secret_api_key}")
