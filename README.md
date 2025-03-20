@@ -7,6 +7,8 @@ Use the below Docker Compose file to get started:
 services:
   ddns_client:
     image: netcamel/ddns_client:latest
+    container_name: ddns-client
+    restart: unless-stopped
     volumes:
       - ./:/usr/src/app/log
     environment:
